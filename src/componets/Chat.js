@@ -6,6 +6,7 @@ import ChatInput from './ChatInput'
 import ChatMessage from './ChatMessage'
 
 function Chat() {
+
     return (
         <Container>
             <Header>
@@ -23,6 +24,9 @@ function Chat() {
                         Details
                     </div>
                     <Info />
+                    <DarkMode>
+                        Dark
+                    </DarkMode>
                 </ChannelDetails>
             </Header>
             <MessageContainer>
@@ -38,7 +42,6 @@ function Chat() {
 export default Chat
 
 const Container = styled.div`
-
 
 display: grid;
 grid-template-rows: 64px auto min-content;
@@ -75,5 +78,8 @@ const Info = styled(ErrorOutlineIcon)`
 
 const MessageContainer = styled.div`
 `
+const DarkMode = styled.div`
+    padding-left: 8px;
+    cursor:pointer;
 
-
+`

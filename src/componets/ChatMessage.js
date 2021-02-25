@@ -27,10 +27,20 @@ const Container = styled.div`
     padding: 8px 20px; 
     display: flex;   
     align-items: center; 
+
+    :hover{
+        background:rgb(97,96,97);
+        spam{
+            color: white;
+        }
+    }
+
 `
 const MessageContent = styled.div`
     display: flex;
     flex-direction: column;
+
+
 `
 const UserAvatar = styled.div`
     width: 36px;
@@ -55,6 +65,7 @@ const Name = styled.div`
         color: rgb(97,96,97);
         font-size: 13px;
     }
+
 `
 
 const Text = styled.div`
