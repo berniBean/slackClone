@@ -4,7 +4,7 @@ import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
-function Header() {
+function Header({user, singOut}) {
     return (
         <Container>
             <Main>
@@ -22,10 +22,10 @@ function Header() {
 
             <UserContainer>
                 <Name>
-                    Nazariy
+                   {user.name}
                 </Name>
-                <UserImage>
-                    <AccountCircleIcon />
+                <UserImage onClick={singOut}>
+                   <img src = {user.photo ? user.photo : <AccountCircleIcon />}/>
                 </UserImage>
             </UserContainer>
         </Container>
@@ -95,4 +95,9 @@ const Name = styled.div`
 const UserImage = styled.div`
     width: 28px;
     hright: 28px;
+    border-radius: 2px;
+    cursor: pointer;
+    img{
+        width: 100%;
+    }
 `

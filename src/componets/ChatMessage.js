@@ -1,19 +1,24 @@
 import React from 'react'
+import SimpleDateTime  from 'react-simple-timestamp-to-date';
 import styled from 'styled-components'
 
-function ChatMessage() {
+function ChatMessage({text, name, image, timeStamp}) {
     return (
         <Container>
             <UserAvatar>
-                <img src="https://randomuser.me/api/portraits/women/12.jpg"></img>    
+                <img src={image}></img>    
             </UserAvatar>
             <MessageContent>
                 <Name>
-                    Veronica
-                    <spam>24/02/20021 05:50:55 PM</spam>
+                    {name}
+                    
+                    <spam>
+
+                    <SimpleDateTime  dateSeparator="-"  timeSeparator=":" format="DMY" showTime="1"  meridians="1">{new Date(timeStamp.toDate()).toUTCString()}</SimpleDateTime>
+                    </spam>
                 </Name>
                 <Text>
-                    This is the best challenge 
+                    {text}
                 </Text>
             </MessageContent>
         </Container>
@@ -67,6 +72,7 @@ const Name = styled.div`
     }
 
 `
+
 
 const Text = styled.div`
 `

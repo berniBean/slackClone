@@ -1,5 +1,6 @@
 import firebase from 'firebase'
 
+
 const firebaseConfig = {
     apiKey: "AIzaSyDqRp48Fi-2I2QgTXn9Xs-eB6jHe-5sMgE",
     authDomain: "slack-clone-a43ad.firebaseapp.com",
@@ -11,5 +12,10 @@ const firebaseConfig = {
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const db = firebaseApp.firestore();
+const auth = firebase.auth();
+const provider = new firebase.auth.GoogleAuthProvider();
 
+
+export {auth, provider}
 export default db;
+
